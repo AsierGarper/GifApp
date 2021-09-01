@@ -7,20 +7,14 @@ import { GifsService } from '../../gifs/services/gifs.service';
 })
 export class SidebarComponent {
 
-  constructor (private gifservice: GifsService) {};
-
-  // itemsHistorial: string[] = [];
-
   get historial() {
     return this.gifservice.historial;
   }
+  constructor (private gifservice: GifsService) {};
 
-  // mostrarHistorial(){
-  //   console.log('Mira el historial:');
-  //   console.log(this.historial);
-  // }
-
-  
-  
-
+  buscar(termino: string) {
+    this.gifservice.buscarGifs(termino);
+  }
+    
 }
+
